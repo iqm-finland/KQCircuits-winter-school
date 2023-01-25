@@ -98,7 +98,7 @@ class ConcentricTransmon(Qubit):
         """WINTER SCHOOL 2023 - uncomment code below and fill in the missing parts"""
 
         # Generate a region of the qubit shunting capacitor
-        capacitor_islands = []
+        # capacitor_islands = []
         # # Inner circular island
         # inner_island = circle_polygon(..., ...)
         # capacitor_islands.append(inner_island)
@@ -106,7 +106,9 @@ class ConcentricTransmon(Qubit):
         # outer_island = self._make_arc_island(..., ..., ...)
         # capacitor_islands.append(outer_island)
 
-        return pya.Region([poly.to_itype(self.layout.dbu) for poly in capacitor_islands])
+        # return pya.Region([poly.to_itype(self.layout.dbu) for poly in capacitor_islands])
+
+        raise ValueError("Start the WINTER SCHOOL exercise by implementing _make_qubit_islands")  # WINTER SCHOOL 2023 - Remove this line when done
 
     def _make_coupler_island(self):
         """WINTER SCHOOL 2023 - uncomment code below and fill in the missing parts"""
