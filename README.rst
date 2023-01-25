@@ -148,11 +148,19 @@ Make sure that the ``KQCircuits`` works correctly with ``KLayout`` by checking t
 - ``KQCircuits`` entry should be present in the top toolbar.
 - On the bottom left in the ``Libraries`` panel the ``Chip Library`` option should be available from the dropdown menu. Choose it to see multiple ready made chips available for preview. You can drag any of the chips into the center layout to see its contents.
 
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-kqcircuits-works.png?raw=true
+   :alt: These should be available if KQCircuits works
+
 If the KLayout doesn't seem to allow drag-and-dropping chips etc on to the layout, check the following:
 
 - From top toolbar, choose ``File > Setup`` (**Windows**) or ``klayout > Preferences`` (**macOS**)
 - Choose ``Application > Editing mode`` window
 - Make sure ``Use editing mode by default`` is checked
+
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-editing-mode-1.png?raw=true
+   :alt: Enable Editing Mode
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-editing-mode-2.png?raw=true
+   :alt: Enable Editing Mode
 
 Quick editor tips to get started. Of course more techniques will be taught in subsequent lectures.
 
