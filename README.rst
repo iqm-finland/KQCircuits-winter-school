@@ -179,6 +179,38 @@ needs to be closed and reopened. If ``Chip Library`` panel does not show up, the
 with the KQCircuits code. Changes in the ``Chip`` or ``Element`` design code can also be taken into effect
 without reopening KLayout by choosing from the top toolbar: ``KQCircuits > Reload libraries``
 
+Installing KQCircuits as a Python module
+----------------------------------------
+
+So far we have set everything up to work for most of the course.
+However, on the latter half of the course we will be exporting geometry
+produced by KQCircuits into data to be used by third-party simulator software.
+To make this happen we need to have KQCircuits installed as a module in pip.
+
+``cd`` to the ``KQCircuits`` directory then run
+
+``python -m pip install -e klayout_package/python``
+
+This might take 5-10 minutes to execute so don't be worried.
+
+   **macOS** users! While installing KQCircuits, ``pip`` will attempt to install KLayout as a dependency.
+   However, most recent KLayout distributions in pip may not work for **macOS**. To remedy this,
+   the KQCircuit ``klayout_package/python/setup.py`` can be set up to install an older KLayout version
+   that has shown to work for **macOS**. Change the following line
+   https://github.com/iqm-finland/KQCircuits-winter-school/blob/c33ff820d9bae3fbb293e82a645ca5154ae759b3/klayout_package/python/setup.py#L44
+   to ``"klayout==0.27.9",``
+
+To test that this got set up correctly, try running
+
+``python klayout_package/python/scripts/simulations/waveguides_sim_compare.py``
+
+This should cause KLayout to open with the following content:
+
+.. image:: https://raw.githubusercontent.com/iqm-finland/KQCircuits-winter-school/main/check-standalone-works.png
+   :alt: Simulation window
+
+``cd`` to ``KQCircuits/tmp`` and there should be a ``waveguides_sim_elmer`` directory.
+
 Video tutorials (might be outdated)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
