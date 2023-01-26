@@ -114,8 +114,7 @@ This tool can also be used to contribute to the KQCircuits project after this co
 For **Windows** an external git distribution needs to be used.
 We recommend `this Windows application <https://git-scm.com/downloads>`__.
 After install you will have access to the ``Git Bash`` command line application which can be used to run **git** commands.
-Open the ``Git Bash`` utility with administrator rights by right clicking the ``Git Bash`` application and choosing ``Run as administrator``.
-In ``Git Bash`` terminal navigate to the folder of your choice using the ``cd`` command.
+Open the ``Git Bash`` terminal and navigate to the folder of your choice using the ``cd`` command.
 (the default location is the ``HOME`` directory, which is ``C:/Users/<UserName>``)
 
 Install KQCircuits
@@ -128,7 +127,6 @@ Clone the KQCircuits repository:
 This creates the KQCircuits directory at the working directory.
 
 The following commands will configure KLayout to use the KQCircuits library
-(in **Windows** you will need administrator rights).
 
    ``cd KQCircuits``
 
