@@ -170,6 +170,21 @@ Quick editor tips to get started. Of course more techniques will be taught in su
 - Drag with ``Right click`` to zoom to the selected region
 - ``Middle click`` to drag the layout, scroll to zoom
 
+The content in the layout might look needlessly complicated like so:
+
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-layer-properties-before.png?raw=true
+   :alt: Before choosing layer properties
+
+This can be simplified by choosing from the top toolbar: ``File`` > ``Load layer properties`` and navigating to: ``KQCircuits/klayout_package/python/kqcircuits/layer_config/default_layer_props.lym``
+
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-layer-properties-during.png?raw=true
+   :alt: Choosing layer properties
+
+The results should look like this:
+
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-layer-properties-after.png?raw=true
+   :alt: After choosing layer properties
+
 Modifying the KQCircuits code
 -----------------------------
 
