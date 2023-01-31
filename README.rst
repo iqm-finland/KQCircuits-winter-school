@@ -79,7 +79,7 @@ We start by downloading and installing the latest ``KLayout`` application. There
 
    Open the installer and follow the instructions with default suggested ``Destination Folder``.
 
-2. Download and install package from package manager like ``brew`` or ``pip`` - **recommended for macOS platforms**
+2. Download and install package from package manager like ``brew`` - **recommended for macOS platforms**
 
    We recommend using `Homebrew <https://brew.sh/>`__ to install KLayout on a MacOS platform.
    After installing Homebrew make sure that python and pip can be run from terminal, and if not, run: ``brew install python``
@@ -88,21 +88,22 @@ We start by downloading and installing the latest ``KLayout`` application. There
 
       ``brew install --cask klayout``
 
-   After installation, the KLayout application should be available via the SpotLight search. Attempt to start up KLayout, which might not work right away for following reasons:
+   Homebrew might place the ``klayout.app`` package in ``/Applications/KLayout/`` directory.
+   In this case simply move the ``klayout.app`` package so that its path is ``/Applications/klayout.app``
+
+   Attempt to start up KLayout, which might not work right away for following reasons:
 
    a. macOS might prompt to install Rosetta to support KLayout - follow macOS instructions to do so.
 
    b. macOS might not trust the KLayout application and refuse to run it. In that case do the following:
 
-      - open ``Applications > KLayout`` folder
+      - open ``Applications`` folder
 
-      - control+click klayout executable, choose ``open``
+      - control+click ``klayout.app`` executable, choose ``open``
 
       - macOS will again complain about untrusted applications, but this time provide an ``open`` option which should be chosen to override security
 
       - After launching KLayout once there should be no further issues on subsequent launches
-
-   ``pip`` package manager also has a klayout package which could be used to install ``KLayout`` e.g. for Linux platforms: ``pip install klayout``
 
 Set up git
 ----------
@@ -122,7 +123,7 @@ Install KQCircuits
 
 Clone the KQCircuits repository:
 
-``git clone https://github.com/iqm-finland/KQCircuits-winter-school.git KQCircuits``
+   ``git clone https://github.com/iqm-finland/KQCircuits-winter-school.git KQCircuits``
 
 This creates the KQCircuits directory at the working directory.
 
@@ -169,6 +170,21 @@ Quick editor tips to get started. Of course more techniques will be taught in su
 - Drag with ``Right click`` to zoom to the selected region
 - ``Middle click`` to drag the layout, scroll to zoom
 
+The content in the layout might look needlessly complicated like so:
+
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-layer-properties-before.png?raw=true
+   :alt: Before choosing layer properties
+
+This can be simplified by choosing from the top toolbar: ``File`` > ``Load layer properties`` and navigating to: ``KQCircuits/klayout_package/python/kqcircuits/layer_config/default_layer_props.lym``
+
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-layer-properties-during.png?raw=true
+   :alt: Choosing layer properties
+
+The results should look like this:
+
+.. image:: https://github.com/iqm-finland/KQCircuits-winter-school/blob/main/check-layer-properties-after.png?raw=true
+   :alt: After choosing layer properties
+
 Modifying the KQCircuits code
 -----------------------------
 
@@ -178,6 +194,38 @@ For the code changes to take into effect the KLayout instance
 needs to be closed and reopened. If ``Chip Library`` panel does not show up, there most likely has been an error
 with the KQCircuits code. Changes in the ``Chip`` or ``Element`` design code can also be taken into effect
 without reopening KLayout by choosing from the top toolbar: ``KQCircuits > Reload libraries``
+
+Installing KQCircuits as a Python module
+----------------------------------------
+
+So far we have set everything up to work for most of the course.
+However, on the latter half of the course we will be exporting geometry
+produced by KQCircuits into data to be used by third-party simulator software.
+To make this happen we need to have KQCircuits installed as a module in pip.
+
+``cd`` to the ``KQCircuits`` directory then run
+
+   ``python -m pip install -e klayout_package/python``
+
+This might take 5-10 minutes to execute so don't be worried.
+
+   **macOS** users! While installing KQCircuits, ``pip`` will attempt to install KLayout as a dependency.
+   However, most recent KLayout distributions in pip may not work for **macOS**. To remedy this,
+   the KQCircuit ``klayout_package/python/setup.py`` can be configured to install an older KLayout version
+   that has shown to work for **macOS**. Change the following line
+   https://github.com/iqm-finland/KQCircuits-winter-school/blob/c33ff820d9bae3fbb293e82a645ca5154ae759b3/klayout_package/python/setup.py#L44
+   to ``"klayout==0.27.9",``
+
+To test that this got set up correctly, try running
+
+``python klayout_package/python/scripts/simulations/waveguides_sim_compare.py``
+
+This should cause KLayout to open with the following content:
+
+.. image:: https://raw.githubusercontent.com/iqm-finland/KQCircuits-winter-school/main/check-standalone-works.png
+   :alt: Simulation window
+
+``cd`` to ``KQCircuits/tmp`` and there should be a ``waveguides_sim_elmer`` directory.
 
 Video tutorials (might be outdated)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
