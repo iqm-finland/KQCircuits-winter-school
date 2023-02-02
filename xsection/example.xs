@@ -30,21 +30,21 @@ delta(5 * dbu)
 
 # Input layers from layout
 
-layer_b_base_metal_gap = layer("10/1")
-layer_b_SIS_junction = layer("17/2") 
-layer_b_SIS_shadow = layer("18/2") 
-layer_b_airbridge_pads = layer("28/3")
-layer_b_airbridge_flyover = layer("29/3")
-layer_b_underbump_metallization = layer("32/4")
-layer_b_indium_bump = layer("33/4")
+layer_b_base_metal_gap = layer("130/1")
+layer_b_SIS_junction = layer("136/1")
+layer_b_SIS_shadow = layer("137/1")
+layer_b_airbridge_pads = layer("146/1")
+layer_b_airbridge_flyover = layer("147/1")
+layer_b_underbump_metallization = layer("148/1")
+layer_b_indium_bump = layer("149/1")
 
-layer_t_base_metal_gap = layer("40/1")
-layer_t_SIS_junction = layer("47/2") 
-layer_t_SIS_shadow = layer("48/2") 
-layer_t_airbridge_pads = layer("58/3")
-layer_t_airbridge_flyover = layer("59/3")
-layer_t_underbump_metallization = layer("62/4")
-layer_t_indium_bump = layer("63/4")
+layer_t_base_metal_gap = layer("2/2")
+layer_t_SIS_junction = layer("8/2")
+layer_t_SIS_shadow = layer("9/2")
+layer_t_airbridge_pads = layer("18/2")
+layer_t_airbridge_flyover = layer("19/2")
+layer_t_underbump_metallization = layer("20/2")
+layer_t_indium_bump = layer("21/2")
 
 # general parameters
 
